@@ -4,7 +4,11 @@ function Cart(props) {
     <div style={borderStyle}>
       cart
       <br />
-      {props.items}
+      <ul>
+        {props.items.map((item) => (
+          <li key={item}>{item}</li>
+        ))}
+      </ul>
     </div>
   );
 }
