@@ -1,5 +1,10 @@
 function Item(props) {
   const borderStyle = { borderColor: "grey", borderStyle: "solid" };
+
+  function addToCart() {
+    props.action((oldArray) => [...oldArray, props.name]);
+  }
+
   return (
     <div style={borderStyle}>
       <p>{props.name}</p>
@@ -8,7 +13,7 @@ function Item(props) {
         <label>quantity</label>
         <input type="number" />
       </div>
-      <button>add to cart</button>
+      <button onClick={addToCart}>add to cart</button>
     </div>
   );
 }
